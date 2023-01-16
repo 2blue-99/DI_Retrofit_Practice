@@ -1,9 +1,9 @@
-package com.example.retrofit_practice
+package retrofit_DI.example.retrofit_practice
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.retrofit_practice.Data.Detail
+import retrofit_DI.example.retrofit_practice.data.Data_Detail
 import com.example.retrofit_practice.databinding.ItemBinding
 
 /**
@@ -12,7 +12,7 @@ import com.example.retrofit_practice.databinding.ItemBinding
  */
 class Adapter(): RecyclerView.Adapter<Adapter.AdapterViewHolder>() {
 
-    var imformation = arrayListOf<Detail>()
+    var imformation = arrayListOf<Data_Detail>()
         set(value) {
             field = value
             notifyDataSetChanged()
@@ -20,7 +20,7 @@ class Adapter(): RecyclerView.Adapter<Adapter.AdapterViewHolder>() {
 
     inner class AdapterViewHolder(private val binding: ItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(list: Detail) {
+        fun bind(list: Data_Detail) {
             binding.textView.text = "${list.stdDate.slice(0..3)}.${list.stdDate.slice(4..5)}.${list.stdDate.slice(6..7)}"
             binding.textView2.text = "${list.stdHour.slice(0..1)}:${list.stdHour.slice(2..3)}"
             binding.textView3.text = "${list.conzoneName}"

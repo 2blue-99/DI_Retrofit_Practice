@@ -1,6 +1,10 @@
-package com.example.retrofit_practice.Data
+package retrofit_DI.example.retrofit_practice.domain
 
-data class Detail(
+/**
+ * 2023-01-15
+ * pureum
+ */
+data class Domain_Detail(
     val conzoneId: String,
     val conzoneName: String,
     val grade: String,
@@ -12,6 +16,6 @@ data class Detail(
     val stdHour: String,
     val timeAvg: String,
     val trafficAmout: String,
-    val updownTypeCode: String,
-    val vdsId: String
+    //val updownTypeCode: String,
+    //val vdsId: String
 )
