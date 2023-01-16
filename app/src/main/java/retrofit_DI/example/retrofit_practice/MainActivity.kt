@@ -3,32 +3,26 @@ package retrofit_DI.example.retrofit_practice
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.retrofit_practice.ViewModel
 import com.example.retrofit_practice.databinding.ActivityMainBinding
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import retrofit_DI.example.retrofit_practice.data.Data
-import retrofit_DI.example.retrofit_practice.data.Mid
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private val binding : ActivityMainBinding by lazy {
         ActivityMainBinding.inflate(layoutInflater)
     }
 
-   // private val viewModel: ViewModel by viewModels()
+   private val viewModel: ViewModel by viewModels()
 
     private val adapter = Adapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-
-
-        dsafsfdfdsafds
-        dafsffdsafsfaf
-
 
         //ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(ViewModel::class.java)
 
@@ -37,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         binding.button.setOnClickListener{
             Log.e("TAG", "onCreate: click", )
             //getData(binding.textField.text.toString())
-            //viewModel.viewModelGetData()
+            viewModel.viewModelGetData()
         }
 
         binding.recycler.layoutManager = LinearLayoutManager(this)
@@ -47,17 +41,17 @@ class MainActivity : AppCompatActivity() {
 //            var a = RetrofitImpl.getData()
 //            Log.e("TAG", "onCreate: $a", )
 //        }
-        //viewModel.viewModelGetData()
-        Mid().mid().enqueue(object:Callback<Data>{
-            override fun onResponse(call: Call<Data>, response: Response<Data>) {
-                println(response.body()!!.list)
-            }
-
-            override fun onFailure(call: Call<Data>, t: Throwable) {
-                Log.e("TAG", "onFailure: 실패!! ${call}, $t")
-            }
-
-        })
+        viewModel.viewModelGetData()
+//        RetrofitImpl().getData().enqueue(object:Callback<Data>{
+//            override fun onResponse(call: Call<Data>, response: Response<Data>) {
+//                println(response.body()!!.list)
+//            }
+//
+//            override fun onFailure(call: Call<Data>, t: Throwable) {
+//                Log.e("TAG", "onFailure: 실패!! ${call}, $t")
+//            }
+//
+//        })
 
     }
 

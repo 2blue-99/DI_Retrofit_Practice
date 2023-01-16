@@ -7,5 +7,6 @@ import retrofit_DI.example.retrofit_practice.data.Data_Detail
  * pureum
  */
 data class DomainData(
-    val list: List<Data_Detail>?
+    val list: List<Data_Detail>?,
+    val code: String
 )

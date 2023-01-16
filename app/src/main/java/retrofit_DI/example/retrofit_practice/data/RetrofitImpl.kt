@@ -1,26 +1,20 @@
 package retrofit_DI.example.retrofit_practice.data
 
 import android.util.Log
-import kotlinx.coroutines.CoroutineScope
+import retrofit2.Call
 import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Inject
+
 
 /**
- * 2023-01-15
+ * 2023-01-16
  * pureum
  */
-
-
-object RetrofitImpl{
-
-    var myRetrofit =  Retrofit.Builder()
-
-    fun getData(): Retrofit {
-        Log.e("TAG", "getData: data쪽", )
-
-        return myRetrofit
-            .baseUrl("http://data.ex.co.kr/openapi/odtraffic/")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
+class RetrofitImpl @Inject constructor(
+    private val retrofit: Retrofit
+):RetrofitInterface{
+    override suspend fun getData(): Data {
+        Log.e("TAG", "getData: in ", )
+        return retrofit.create(RetrofitInterface::class.java).getData()
     }
 }
