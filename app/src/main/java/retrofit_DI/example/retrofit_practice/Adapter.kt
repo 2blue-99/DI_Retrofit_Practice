@@ -1,5 +1,6 @@
 package retrofit_DI.example.retrofit_practice
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -12,8 +13,9 @@ import com.example.retrofit_practice.databinding.ItemBinding
  */
 class Adapter(): RecyclerView.Adapter<Adapter.AdapterViewHolder>() {
 
-    var imformation = arrayListOf<Data_Detail>()
+    var dataList = arrayListOf<Data_Detail>()
         set(value) {
+            Log.e("TAG", ": 바뀜!!", )
             field = value
             notifyDataSetChanged()
         }
@@ -34,9 +36,9 @@ class Adapter(): RecyclerView.Adapter<Adapter.AdapterViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: AdapterViewHolder, position: Int) {
-        holder.bind(imformation[position])
+        holder.bind(dataList[position])
     }
 
-    override fun getItemCount(): Int = imformation.size
+    override fun getItemCount(): Int = dataList.size
 
 }
