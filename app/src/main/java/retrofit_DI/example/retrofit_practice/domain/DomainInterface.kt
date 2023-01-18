@@ -8,6 +8,6 @@ import retrofit_DI.example.retrofit_practice.data.Data_Detail
  * 2023-01-15
  * pureum
  */
-interface DomainInterface {
+interface DomainInterface { // usecase
     suspend fun domainGetData(): DomainData
 }

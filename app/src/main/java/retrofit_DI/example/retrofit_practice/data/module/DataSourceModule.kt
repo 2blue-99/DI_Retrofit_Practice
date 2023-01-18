@@ -22,4 +22,5 @@ object DataSourceModule {
     fun provideRepo(domainInterface: RetrofitInterface): DomainInterface {
         return DomainImpl(domainInterface)
     }
+
 }

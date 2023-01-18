@@ -36,6 +36,8 @@ class MainActivity : AppCompatActivity() {
 
         supportActionBar?.hide()
 
+
+
         binding.button.setOnClickListener{
             downKeyBoard()
             isLoading()

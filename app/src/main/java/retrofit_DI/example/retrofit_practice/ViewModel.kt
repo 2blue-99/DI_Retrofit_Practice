@@ -30,6 +30,7 @@ class ViewModel @Inject constructor(
         get() = _dataList
 
 
+
     fun viewModelGetData(want :String ="") {
         val myData = ArrayList<Data_Detail>()
         viewModelScope.launch {
