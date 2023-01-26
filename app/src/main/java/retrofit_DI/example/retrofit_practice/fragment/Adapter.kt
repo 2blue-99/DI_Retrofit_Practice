@@ -1,4 +1,4 @@
-package retrofit_DI.example.retrofit_practice
+package retrofit_DI.example.retrofit_practice.fragment
 
 import android.util.Log
 import android.view.LayoutInflater

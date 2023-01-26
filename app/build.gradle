@@ -40,8 +40,8 @@ dependencies {
 
     //viewModel을 메인엑티비티에서 쓸수있게해줌
     implementation 'androidx.activity:activity-ktx:1.1.0'
-//    //viewModel을 fragment에서 쓸수있게 해줌.
-//    implementation 'androidx.fragment:fragment-ktx:1.5.5'
+    //viewModel을 fragment에서 쓸수있게 해줌.
+    implementation 'androidx.fragment:fragment-ktx:1.5.2'
     //viewModel이 라이프사이클에 맞춰서 돌아가게 함
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
 //    //lifecycle에서 사용 가능한 reapeatOnLifeCycle 사용 가능.

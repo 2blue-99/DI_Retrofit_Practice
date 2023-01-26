@@ -1,7 +1,6 @@
 package retrofit_DI.example.retrofit_practice.data
 
 import android.util.Log
-import retrofit2.Call
 import retrofit2.Retrofit
 import javax.inject.Inject
 

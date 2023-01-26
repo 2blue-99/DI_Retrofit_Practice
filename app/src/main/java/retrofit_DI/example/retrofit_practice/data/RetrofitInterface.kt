@@ -1,6 +1,5 @@
 package retrofit_DI.example.retrofit_practice.data
 
-import retrofit2.Call
 import retrofit2.http.GET
 
 

@@ -17,4 +17,6 @@ class UseCase @Inject constructor(
     suspend fun useCaseGetData(): DomainData {
         return repo.domainGetData()
     }
+
+
 }
